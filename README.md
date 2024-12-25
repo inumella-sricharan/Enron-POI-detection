@@ -14,13 +14,13 @@ Usually there is a central orchestrator taking care of 3 key steps : placement, 
 
 But, if we can use the information from the few set of malicious mule accounts we had detected earlier and harness the structure of the network, there is a good chance we can uncover many other mule accounts involed in the act that were not previously noticed. <br>
 
-### **<ins>Workflow Formulation:</ins>**
-So, I picked up the enron dataset to perform POI(person of interest) detection task.
-This dataset has emails from 150 people of the enron organization. Now if i go about forming features for only 150 people, there are two problems associated with it :
-1) 150 is too few data points for a ML based anomaly detection algorithm.
-2) Looking at the communications at an email level reveals a lot more complexity in information and communication patterns which we will end up ignoring if we only consider the 150 people. <br>
+### **<ins>Workflow Formulation:</ins>** <br>
+I decided to take up the Enron dataset to perform POI(person of interest) detection task.
+This dataset has emails from inboxes 150 people of the enron organization. For 150 people, there are two problems associated:
+1) 150 data points is less for a ML based anomaly detection algorithm.
+2) Looking at the communications at an email level revealed a lot of complexity in information and communication patterns which will be lost while forming feature vectors for only 150 people. <br>
 
-I got a thought that "If email level communications are complex, what about pairs of emails ?" as combination of emails would provide a much larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network then I thought of the following approach :
+I got a thought that "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :
 
 1) communication between two emails consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
 in the network.
