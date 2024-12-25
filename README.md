@@ -22,8 +22,8 @@ $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$<br>
 $\text{And after performing row-wise normalization,}$<br>
 $P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} outdegree(i)$<br><br>
 
-When we apply pagerank on the markov matrix (transpose of our transition matrix), since the probability of transitioning is more towards anomalous nodes, the flow of importance <br>
-happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph.
+When we apply pagerank on the markov matrix (transpose of our transition matrix), since the probability of transitioning is more towards anomalous nodes, the flow of importance happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph. The advantage in this scenario is that the node with a high number of in-links simply does
+not get ranked higher, the node having in-links with more anomalous nodes gets ranked higher, because we modified the probailities in the transition matrix to be more towards the anomalous nodes.
 
 
  
