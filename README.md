@@ -7,4 +7,3 @@ $\text{And, } Y_{i \rightarrow j} \text{ is the output(anomaly score) from the i
 
  $ \text{Shifted scores: } Y'_{i \to j} = Y_{i \to j}, \quad Y'_{i \to j} \in Y $
  
-= \left( max \left( Y{i \rightarrow j} \epsilon Y \right) - Y_{i \rightarrow j} \right) + 1
