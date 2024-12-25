@@ -12,7 +12,7 @@ But real-life scenarios are much more complicated and nuanced, there are thousan
 several mule accounts within a banking system are involved in funneling black money through the system from undeclared sources of income. 
 Usually there is a central orchestrator taking care of 3 key steps : placement, layering and integration. while we can capture a handfull of malicious mule accounts, uncovering the entire set of mule accounts which were involved in the act is not always guaranteed. That is because we are limited by the features and data that we can use to train the machine learning model. 
 
-But, if we can use the information from the few set of malicious mule accounts we had detected earlier and harness the structure of the network, there is a good chance we can uncover many other mule accounts involed in the act that were not previously noticed. <br>
+If we can use the information from the few set of malicious mule accounts we had detected earlier and harness the structure of the network, there is a good chance we can uncover many other mule accounts involed in the act that were not previously noticed. <br>
 
 ### **<ins>Workflow Formulation:</ins>** <br>
 I decided to take up the Enron dataset to perform POI(person of interest) detection task.
@@ -20,12 +20,12 @@ This dataset has emails from inboxes 150 people of the enron organization. For 1
 1) 150 data points is less for a ML based anomaly detection algorithm.
 2) Looking at the communications at an email level revealed a lot of complexity in information and communication patterns which will be lost while forming feature vectors for only 150 people. <br>
 
-I got a thought that "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :
+I thought "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :<br>
 
 1) communication between two emails consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
 in the network.
-2) Use Isolation forest to provide anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
-3) Finally harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events. 
+2) Use Isolation Forest algorithm to generate anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
+3) Finally harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events. <br><br>
 
 
 $Y_{i \rightarrow j} = f_\theta \left( X_{i \rightarrow j} \right)$ <br><br>
