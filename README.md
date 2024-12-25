@@ -16,7 +16,7 @@ $\text{Also we are making sure that the minimum of newly transformed score is 1 
 
 ### <ins>creating the transition matrix</ins><br>
 Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from (node i --> node j) (1) or not (0).<br>
-
+$P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.15cm} / \hspace{0.15cm} outdegree(i)$
 
 
  
