@@ -11,8 +11,8 @@ $\text{And, } Y_{i \rightarrow j} \text{ is the output(anomaly score) from the i
 $Y_{i \rightarrow j}^{'} =  \[ \max \( Y_{i \rightarrow j} \hspace{0.15cm} \epsilon \hspace{0.15cm} Y) \] + 1$<br>
 $\text{Here, } Y_{i \rightarrow j}^{'} \text{ is the shifted anomaly score}$<br>
 $\text{where Y is the complete set of anomaly scores from }f_\theta$<br>
-$\text{Here we are making negative anomaly scores into much higher positive scores. And the positive anomaly scores will be relatively lower positive among the transformed scores.}$<br>
-$\text{Also we are making sure that the minimum of newly transformed score is 1 or more}$.<br>
+Here we are making negative anomaly scores into much higher positive scores. And the positive anomaly scores will be relatively lower positive among the transformed scores.<br>
+Also we are making sure that the minimum of newly transformed score is 1 or more.<br>
 
 ### <ins>creating the transition matrix</ins><br>
 Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from (node i --> node j) (1) or not (0).<br>
@@ -20,7 +20,10 @@ The main aim while creating the transition matrix should be to keep the probabil
 
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$<br>
 $\text{And after performing row-wise normalization,}$<br>
-$P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} outdegree(i)$
+$P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} outdegree(i)$<br><br>
+
+When we apply pagerank on the markov matrix (transpose of our transition matrix), since the probability of transitioning is more towards anomalous nodes, the flow of importance <br>
+happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph.
 
 
  
