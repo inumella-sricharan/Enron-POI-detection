@@ -1,7 +1,24 @@
 # Enron-POI-detection
  Identifying persons of interest through a simple ML based anomaly detection algorithm enhanced with communication network/graph structure.
 
- 
+This project is about identifying anomalous activities within a communication network and to identify key persons/entities of interest that are causing these anomalous and potentially malicious events. 
+
+The straight forward approach would be to use a ML based algorithm with some set of crafted features(for entities) in the network to identify anomalies and go through their information manually to take a decision upon their malicious intent. 
+
+But real-life scenarios are much more complicated and nuanced, there are thousands of events occuring in a communication network and to identify key-players involved in a malicious activity requires the combination of machine learning techniques and the information contained within the structure of the network.
+
+So, I picked up the enron dataset to perform POI detection task.
+This dataset has emails from 150 people of the enron organization. Now if i go about forming features for only 150 people, there are two problems associated with it :
+a) 150 is too few data points for a ML based anomaly detection algorithm.
+b) Looking at the communications at an email level reveals a lot more complexity in information and communication patterns which we will end up ignoring if we only consider the 150 people.
+
+I got a thought that "If email level communications are complex, what about pairs of emails ?" as combination of emails would provide a much larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network then I thought of the following approach :
+
+1) communication between two emails consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
+in the network.
+2) Use Isolation forest to provide anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
+3) Finally harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events. 
+
 
 $Y_{i \rightarrow j} = f_\theta \left( X_{i \rightarrow j} \right)$ <br><br>
 $\text{where, } f_\theta \text{ is the isolation forest model}$ <br>
