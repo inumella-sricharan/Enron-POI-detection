@@ -1,21 +1,22 @@
 # Enron-POI-detection
  Identifying persons of interest through a simple ML based anomaly detection algorithm enhanced with communication network/graph structure.
 
-This project is about identifying anomalous activities within a communication network and to identify key persons/entities of interest that are causing these anomalous and potentially malicious events. 
+This project is about identifying anomalous activities within a communication network and to identify key persons/entities of interest that are causing these anomalous and potentially malicious events. <br> 
 
-The straight forward approach would be to use a ML based algorithm with some set of crafted features(for entities) in the network to identify anomalies and go through their information manually to take a decision upon their malicious intent. 
+The straight forward approach would be to use a ML based algorithm with some set of crafted features(for entities) in the network to identify anomalies and go through their information manually to take a decision upon their malicious intent. <br> 
 
-But real-life scenarios are much more complicated and nuanced, there are thousands of events occuring in a network and to identify key-players involved in a malicious activity requires the combination of machine learning techniques and the information contained within the structure of the network.
+But real-life scenarios are much more complicated and nuanced, there are thousands of events occuring in a network and to identify key-players involved in a malicious activity requires the combination of machine learning techniques and the information contained within the structure of the network. <br>
 
-For example, several mule accounts within a banking system are involved in funneling black money through the system from undeclared sources of income. 
+**For example:** <br> 
+several mule accounts within a banking system are involved in funneling black money through the system from undeclared sources of income. 
 Usually there is a central orchestrator taking care of 3 key steps : placement, layering and integration. while we can capture a handfull of malicious mule accounts, uncovering the entire set of mule accounts which were involved in the act is not always guaranteed. That is because we are limited by the features and data that we can use to train the machine learning model. 
 
-But, if we can use the information from the few set of malicious mule accounts we had detected earlier and harness the structure of the network, there is a good chance we can uncover many other mule accounts involed in the act that were not previously noticed.
+But, if we can use the information from the few set of malicious mule accounts we had detected earlier and harness the structure of the network, there is a good chance we can uncover many other mule accounts involed in the act that were not previously noticed. <br>
 
 So, I picked up the enron dataset to perform POI(person of interest) detection task.
-This dataset has emails from 150 people of the enron organization. Now if i go about forming features for only 150 people, there are two problems associated with it :
-a) 150 is too few data points for a ML based anomaly detection algorithm.
-b) Looking at the communications at an email level reveals a lot more complexity in information and communication patterns which we will end up ignoring if we only consider the 150 people.
+This dataset has emails from 150 people of the enron organization. Now if i go about forming features for only 150 people, there are two problems associated with it : <br>
+a) 150 is too few data points for a ML based anomaly detection algorithm. <br>
+b) Looking at the communications at an email level reveals a lot more complexity in information and communication patterns which we will end up ignoring if we only consider the 150 people. <br>
 
 I got a thought that "If email level communications are complex, what about pairs of emails ?" as combination of emails would provide a much larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network then I thought of the following approach :
 
