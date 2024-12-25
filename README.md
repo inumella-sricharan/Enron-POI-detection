@@ -10,7 +10,7 @@ $\text{And, } Y_{i \rightarrow j} \text{ is the output(anomaly score) from the i
 
 ### <ins>Shifting the anomaly scores</ins> <br>
 
-$Y_{i \rightarrow j}^{'} =  \[ \max \( \forall Y_{i \rightarrow j} \hspace{0.15cm} \epsilon \hspace{0.15cm} Y) \] + 1$ <br>
+$Y_{i \rightarrow j}^{'} =  \[ \max \( \hspace{0.15cm} \forall \hspace{0.15cm} Y_{i \rightarrow j} \hspace{0.15cm} \epsilon \hspace{0.15cm} Y) \] + 1$ <br>
 $\text{Here, } Y_{i \rightarrow j}^{'} \text{ is the shifted anomaly score}$ <br>
 $\text{where Y is the complete set of anomaly scores from }f_\theta$ <br><br>
 Here we are making negative anomaly scores into much higher positive scores. And the positive anomaly scores will be relatively lower positive among the transformed scores. <br>
