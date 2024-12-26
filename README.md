@@ -18,10 +18,10 @@ If we can use the information from the few set of malicious mule accounts we had
 I decided to take up the Enron dataset to perform POI(person of interest) detection task.
 This dataset has emails from inboxes 150 people of the enron organization. For 150 people, there are two problems associated:
 1) 150 data points is less for a ML based anomaly detection algorithm.
-2) Looking at the communications at an email level revealed a lot of complexity in communication patterns. For example:
-   a) The same person can have both Enron email-id and a personal email-id.
-   b) There are email-ids belonging to non-human entities.
-   c) A single email is sent from one email-id to several email-ids at once.
+2) Looking at the communications at an email level revealed a lot of complexity in communication patterns. For example:<br>
+   a) The same person can have both Enron email-id and a personal email-id.<br>
+   b) There are email-ids belonging to non-human entities.<br>
+   c) A single email is sent from one email-id to several email-ids at once.<br>
 
 These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities in the communication network.<br>
 
