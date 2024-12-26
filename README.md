@@ -18,18 +18,26 @@ If we can use the information from the few set of malicious mule accounts we had
 I decided to take up the Enron dataset to perform POI(person of interest) detection task.
 This dataset has emails from inboxes 150 people of the enron organization. For 150 people, there are two problems associated:
 1) 150 data points is less for a ML based anomaly detection algorithm.
-2) Looking at the communications at an email level revealed a lot of complexity in information and communication patterns which will be lost while forming feature vectors for only 150 people. <br>
+2) Looking at the communications at an email level revealed a lot of complexity in communication patterns. For example:
+   a) The same person can have both Enron email-id and a personal email-id.
+   b) There are email-ids belonging to non-human entities.
+   c) A single email is sent from one email-id to several email-ids at once.
 
-I thought "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :<br>
+These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities in the communication network.<br>
+
+Also, "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :<br>
 
 1) communication between two emails consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
 in the network.
 2) Use Isolation Forest algorithm to generate anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
 3) Harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events.<br><br>
 
+write about the features that are considered in this section.
+
 
 ### <ins>Isolation forest algorithm:</ins> <br>
 
+briefly mention about the working of iso. forest algo.
 insert the equation for calculating anomaly score from path length of the trees of iso forest algo.
 
 $Y_{i \rightarrow j} = f_\theta \left( X_{i \rightarrow j} \right)$ <br><br>
@@ -46,7 +54,7 @@ Here we are making negative anomaly scores into much higher positive scores. And
 Also we are making sure that the minimum of newly transformed score is 1 or more. <br>
 
 ### <ins>Creating the transition matrix:</ins> <br>
-Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from $node i \rightarrow node j$ (1) or not (0). <br>
+Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from $\text{node i} \rightarrow \text{node j}$ (1) or not (0). <br>
 The main aim while creating the transition matrix should be to keep the probabilities of transitioning towards anomalous nodes higher compared to those of normal nodes. i.e <br>
 
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
@@ -58,6 +66,8 @@ When we apply pagerank on the markov matrix (transpose of our transition matrix)
 not get ranked higher, the node having in-links with more anomalous nodes gets ranked higher(because we modified the probailities in the transition matrix to be more towards the anomalous nodes).
 
 ### Results
+
+attach the results here from both isolation forest and pagerank algorithm.
 
 
 
