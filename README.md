@@ -25,9 +25,9 @@ This dataset has emails from inboxes 150 people of the enron organization. For 1
 
 These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities in the communication network.<br>
 
-Also, "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So if we consider emails as the entities/nodes in the communication network the approach would be :<br>
+Also, "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So the approach would be :<br>
 
-1) communication between two emails consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
+1) Communication between two email-ids consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
 in the network.
 2) Use Isolation Forest algorithm to generate anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
 3) Harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events.<br><br>
@@ -55,7 +55,7 @@ Also we are making sure that the minimum of newly transformed score is 1 or more
 
 ### <ins>Creating the transition matrix:</ins> <br>
 Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from $\text{node i} \rightarrow \text{node j}$ (1) or not (0). <br>
-The main aim while creating the transition matrix should be to keep the probabilities of transitioning towards anomalous nodes higher compared to those of normal nodes. i.e <br>
+The main aim while creating the transition matrix in this particular scenario should be to keep the probabilities of transitioning towards anomalous nodes higher compared to those of normal nodes. i.e <br>
 
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
 $\text{And after performing row-wise normalization,}$ <br>
