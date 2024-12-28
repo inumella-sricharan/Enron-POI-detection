@@ -73,7 +73,7 @@ The main aim while creating the transition matrix in this particular scenario is
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
 $\text{(since we previously shifted the anomaly scores, a high shifted score signifies a more anomalous node and hence a high probability of transition)}$
 $\text{And after performing row-wise normalization,}$ <br><br>
-$P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} \( \sum_{i=1}^{N} Y_{i \rightarrow j}^{'}$ \) <br><br>
+$P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} \( \sum_{j=1}^{N} Y_{i \rightarrow j}^{'}$ \) <br><br>
 $p_{i, j} = P_{i \rightarrow j} \text{   where  } p_{i, j} \text{ is the entry in our transition matrix}$
 
 ### <ins>Role of pagerank algorithm:</ins> <br>
