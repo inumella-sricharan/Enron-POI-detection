@@ -81,7 +81,7 @@ When we apply pagerank algorithm on the markov matrix (transpose of our transiti
 
 ### <ins>Results:</ins> <br>
 
-|***email-id***|***pagerank***|
+|***email-id***|***top-10-pagerank***|
 |:------------:|:------------:|
 |klay@enron.com|	0.008794|
 |jeff.skilling@enron.com|	0.003685|
