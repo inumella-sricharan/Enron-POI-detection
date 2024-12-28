@@ -33,7 +33,7 @@ in the network.
 2) Use Isolation Forest algorithm to generate anomaly scores to each of these edges. The lesser the score, the more anomalous an edge is.
 3) Harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events.<br><br>
 
-### <ins>Features Considered:</ins> <br>
+### <ins>Features Considered:</ins> <br><br>
 1)**email count**: number of emails sent from sender to receiver.<br>
 2)**median time gap**: median time gap between emails sent from sender to receiver.<br>
 3)**unique days active**: number of unique days when emails were sent from sender to receiver.<br>
@@ -52,9 +52,8 @@ in the network.
 16)**question count**: How many times does the question mark character ('?') appear in the emails being sent ?<br><br>
 
 ### <ins>Isolation forest algorithm:</ins> <br>
-
-briefly mention about the working of iso. forest algo.
-insert the equation for calculating anomaly score from path length of the trees of iso forest algo.
+Isolation forest is a tree based algorithm that performs completely random splits in the feature space. Naturally in a cluster of points, the peripheral ones
+require relatively less number of random splits to be isolated when compared to the ones lying deep inside the cluster(they require a high number of splits to be isolated).<br><br>
 
 $Y_{i \rightarrow j} = f_\theta \left( X_{i \rightarrow j} \right)$ <br><br>
 $\text{where, } f_\theta \text{ is the isolation forest model}$ <br>
@@ -75,7 +74,7 @@ The main aim while creating the transition matrix in this particular scenario is
 
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
 $\text{(since we previously shifted the anomaly scores, a high shifted score signifies a more anomalous node and hence a high probability of transition)}$
-$\text{And after performing row-wise normalization,}$ <br>
+$\text{And after performing row-wise normalization,}$ <br><br>
 $P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} \( \sum_{i=1}^{N} P_{i \rightarrow j}$ \) <br><br>
 
 ### <ins>Role of pagerank algorithm:</ins> <br>
