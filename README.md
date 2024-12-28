@@ -34,22 +34,22 @@ in the network.
 3) Harness the structure of the network to identify emails\nodes that are most influential in causing anomalous events.<br><br>
 
 ### <ins>Features Considered:</ins> <br>
-1)email count : number of emails sent from sender to receiver.<br>
-2)median time gap : median time gap between emails sent from sender to receiver.<br>
-3)unique days active : number of unique days when emails were sent from sender to receiver.<br>
-4)entropy of interaction : Measure of randomness in interaction times.<br>
-5)weekend emails count: number of emails sent on weekends.<br>
-6)work hour emails : number of emails sent during working hours.<br>
-7)odd time emails : number of emails sent after working hours.<br>
-8)holiday emails : number of emails sent on holidays.<br>
-9)total_pos_polarity : total positive polarity of the emails being sent.<br>
-10)total_neg_polarity : total negative polarity of the emails being sent.<br>
-11)pos_polarity_variance : variance in the polarity of the positive emails being sent.<br>
-12)neg_polarity_variance : variance in the polarity of the negative emails being sent.<br>
-13)urgent_keyword_count : how many times do words like "urgent", "meeting", "delete" etc., appear in the emails being sent.<br>
-14)hiding_keyword_count : how many times do words synonyms to "hide" appear in the emails being sent.<br>
-15)finance : how many times do words like "delinquency", "default", "risk" appear in the emails being sent.<br>
-16) question count : How many times does the question mark character ('?') appear in the emails being sent ?<br><br>
+1)**email count**: number of emails sent from sender to receiver.<br>
+2)**median time gap**: median time gap between emails sent from sender to receiver.<br>
+3)**unique days active**: number of unique days when emails were sent from sender to receiver.<br>
+4)**entropy of interaction**: Measure of randomness in interaction times.<br>
+5)**weekend emails count**: number of emails sent on weekends.<br>
+6)**work hour emails**: number of emails sent during working hours.<br>
+7)**odd time emails**: number of emails sent after working hours.<br>
+8)**holiday emails**: number of emails sent on holidays.<br>
+9)**total_pos_polarity**: total positive polarity of the emails being sent.<br>
+10)**total_neg_polarity**: total negative polarity of the emails being sent.<br>
+11)**pos_polarity_variance**: variance in the polarity of the positive emails being sent.<br>
+12)**neg_polarity_variance**: variance in the polarity of the negative emails being sent.<br>
+13)**urgent_keyword_count**: how many times do words like "urgent", "meeting", "delete" etc., appear in the emails being sent.<br>
+14)**hiding_keyword_count**: how many times do words synonyms to "hide" appear in the emails being sent.<br>
+15)**finance**: how many times do words like "delinquency", "default", "risk" appear in the emails being sent.<br>
+16)**question count**: How many times does the question mark character ('?') appear in the emails being sent ?<br><br>
 
 ### <ins>Isolation forest algorithm:</ins> <br>
 
@@ -79,7 +79,7 @@ $\text{And after performing row-wise normalization,}$ <br>
 $P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} outdegree(i)$ <br><br>
 
 ### <ins>Role of pagerank algorithm:</ins> <br>
-When we apply pagerank on the markov matrix (transpose of our transition matrix), because the probability of transitioning is more towards anomalous nodes, the flow of importance happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph. The advantage in this scenario is that the node with a high number of in-links simply does
+When we apply pagerank algorithm on the markov matrix (transpose of our transition matrix), because the probability of transitioning is more towards anomalous nodes, the flow of importance happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph. The advantage in this scenario is that the node with a high number of in-links simply does
 not get ranked higher, the node having in-links with more anomalous nodes gets ranked higher(because we modified the probailities in the transition matrix to be more towards the anomalous nodes).
 
 ### Results
