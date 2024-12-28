@@ -26,7 +26,7 @@ This dataset has emails from inboxes 150 people of the enron organization. For 1
 
 These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities/nodes in the communication network.<br>
 
-Also, "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So the approach would be :<br>
+Also, "If email level communications are complex, what about pairs of emails ?" as combinations of email-ids as (sender, receiver) pairs would provide an even larger and richer dataset to work with. So the approach would be :<br>
 
 1) Communication between two email-ids consitutes an edge within the communication network. we can craft a feature vector ($X_{i \rightarrow j}$) for every edge
 in the network.
