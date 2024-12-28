@@ -52,13 +52,14 @@ $Y_{i \rightarrow j}^{'} =  \[ \max \( \hspace{0.15cm} \forall \hspace{0.15cm} Y
 $\text{Here, } Y_{i \rightarrow j}^{'} \text{ is the shifted anomaly score}$ <br>
 $\text{where Y is the complete set of anomaly scores from }f_\theta$ <br><br>
 Here we are making negative anomaly scores into much higher positive scores. And the positive anomaly scores will be relatively lower positive among the transformed scores. <br>
-Also we are making sure that the minimum of newly transformed score is 1 or more. <br>
+Also we are making sure that the minimum of newly transformed score is 1 or more. This shifting of scores is done to appropriately inject this information into the structure of the graph/network.<br>
 
 ### <ins>Creating the transition matrix:</ins> <br>
 Usually for pagerank algorithm the transition matrix is formed out of the adjacency matrix in which each entry indicates wether an edge exists from $\text{node i} \rightarrow \text{node j}$ (1) or not (0). <br>
-The main aim while creating the transition matrix in this particular scenario should be to keep the probabilities of transitioning towards anomalous nodes higher compared to those of normal nodes. i.e <br>
+The main aim while creating the transition matrix in this particular scenario is to keep the probabilities of transitioning towards anomalous nodes higher compared to those of normal nodes. i.e <br>
 
 $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
+$\text{(since we previously shifted the anomaly scores, a high shifted score signifies a high probability of transition)}$
 $\text{And after performing row-wise normalization,}$ <br>
 $P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} outdegree(i)$ <br><br>
 
