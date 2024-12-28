@@ -81,7 +81,18 @@ When we apply pagerank algorithm on the markov matrix (transpose of our transiti
 
 ### <ins>Results:</ins> <br>
 
-
+|***email-id***|***pagerank***|
+|:------------:|:------------:|
+|klay@enron.com|	0.008794|
+|jeff.skilling@enron.com|	0.003685|
+|kenneth.lay@enron.com|	0.003378|
+|sara.shackleton@enron.com|	0.002905|
+|tana.jones@enron.com|	0.002695|
+|louise.kitchen@enron.com|	0.002113|
+|jeff.dasovich@enron.com|	0.001909|
+|gerald.nemec@enron.com|	0.001831|
+|mark.taylor@enron.com|	0.001784|
+|don.baughman@enron.com|	0.001646|
 
 
  
