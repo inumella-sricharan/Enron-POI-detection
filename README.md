@@ -74,7 +74,7 @@ $P_{i \rightarrow j} \propto	Y_{i \rightarrow j}^{'}$ <br>
 $\text{(since we previously shifted the anomaly scores, a high shifted score signifies a more anomalous node and hence a high probability of transition)}$
 $\text{And after performing row-wise normalization,}$ <br><br>
 $P_{i \rightarrow j} = Y_{i \rightarrow j}^{'} \hspace{0.5mm} / \hspace{0.5mm} \( \sum_{i=1}^{N} Y_{i \rightarrow j}^{'}$ \) <br><br>
-$p_{i, j} = P_{i \rightarrow j} \text{where } p_{i, j} \text{ is the entry in our transition matrix}$
+$p_{i, j} = P_{i \rightarrow j} \text{   where  } p_{i, j} \text{ is the entry in our transition matrix}$
 
 ### <ins>Role of pagerank algorithm:</ins> <br>
 When we apply pagerank algorithm on the markov matrix (transpose of our transition matrix), because the probability of transitioning is more towards anomalous nodes, the flow of importance happens more towards anomalous nodes. And we end up discovering most important / influential nodes through the structure of the email-network graph. The advantage in this scenario is that the node with a high number of in-links simply does
