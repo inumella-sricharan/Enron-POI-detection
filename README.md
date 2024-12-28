@@ -21,9 +21,10 @@ This dataset has emails from inboxes 150 people of the enron organization. For 1
 2) Looking at the communications at an email level revealed a lot of complexity in communication patterns. For example:<br>
    a) The same person can have both Enron email-id and a personal email-id.<br>
    b) There are email-ids belonging to non-human entities.<br>
-   c) A single email is sent from one email-id to several email-ids at once.<br>
+   c) Some of the email-ids have enron domain while there are emails that come from the outside world, they have non-enron domains.
+   d) A single email is sent from one email-id to several email-ids at once.<br>
 
-These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities in the communication network.<br>
+These details would be lost while forming feature vectors for only 150 people. So I thought its better to go ahead by considering email-ids as entities/nodes in the communication network.<br>
 
 Also, "If email level communications are complex, what about pairs of emails ?" as combinations of emails would provide an even larger and richer dataset to work with. So the approach would be :<br>
 
