@@ -6,7 +6,7 @@ This project is about identifying anomalous activities within a communication ne
 
 The straight forward approach would be to use a ML based algorithm with some set of crafted features(for entities) in the network to identify anomalies and go through their information manually to take a decision upon their malicious intent. <br> 
 
-But real-life scenarios are much more complicated and nuanced, there are thousands of events occuring in a network and to identify key-players involved in a malicious activity requires the combination of machine learning techniques and the information contained within the structure of the network. <br>
+But real-life scenarios are much more complicated and nuanced, there are thousands of events occuring in a network and to identify key-players involved in a malicious activity requires the combination of machine learning techniques and the information contained within the ***structure of the network.*** <br>
 
 ### **<ins>Example:</ins>** <br> 
 several mule accounts within a banking system are involved in funneling black money through the system from undeclared sources of income. 
