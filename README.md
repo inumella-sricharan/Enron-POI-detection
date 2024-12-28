@@ -48,8 +48,8 @@ in the network.
 12)**neg_polarity_variance**: variance in the polarity of the negative emails being sent.<br>
 13)**urgent_keyword_count**: how many times do words like "urgent", "meeting", "delete" etc., appear in the emails being sent.<br>
 14)**hiding_keyword_count**: how many times do words synonyms to "hide" appear in the emails being sent.<br>
-15)**finance**: how many times do words like "delinquency", "default", "risk" appear in the emails being sent.<br>
-16)**question count**: How many times does the question mark character ('?') appear in the emails being sent ?<br><br>
+15)**finance keyword count**: how many times do words like "delinquency", "default", "risk" appear in the emails being sent.<br>
+16)**question count**: How many times does the question mark character '?' appear in the emails being sent/<br><br>
 
 ### <ins>Isolation forest algorithm:</ins> <br>
 Isolation forest is a tree based algorithm that performs completely random splits in the feature space. Naturally in a cluster of points, the peripheral ones(anomalies) require relatively less number of random splits to be isolated when compared to the ones lying deep inside the cluster(they require a high number of random splits to be isolated).<br><br>
